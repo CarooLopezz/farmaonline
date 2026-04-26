@@ -8,10 +8,10 @@
  */
 import { useMemo } from 'react';
 import { Box, Typography, Paper, List, Divider } from '@mui/material';
-import PeopleIcon from '@mui/icons-material/People';
-import InventoryIcon from '@mui/icons-material/Inventory';
-import PointOfSaleIcon from '@mui/icons-material/PointOfSale';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import GroupIcon from '@mui/icons-material/Group';
+import Inventory2Icon from '@mui/icons-material/Inventory2';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 import AlertaEstacional from '../../components/AlertaEstacional';
 import EstadisticaCard from '../../components/EstadisticaCard';
@@ -83,7 +83,7 @@ export default function DashboardPage() {
             alignItems: 'center',
             gap: 1.5,
           }}>
-            <WarningAmberIcon sx={{ color: '#ef4444' }} />
+            <WarningIcon sx={{ color: '#ef4444' }} />
             <Typography variant="body2" sx={{ fontWeight: 600, color: '#991b1b' }}>
               ¡Atención! Hay <strong>{stockBajoCount} producto{stockBajoCount > 1 ? 's' : ''}</strong> con stock por debajo del mínimo.
             </Typography>
@@ -95,7 +95,7 @@ export default function DashboardPage() {
           <EstadisticaCard
             titulo="Productos en catálogo"
             valor={totalProductos}
-            icono={<InventoryIcon />}
+            icono={<Inventory2Icon />}
             color="#16a34a"
           />
           <EstadisticaCard
@@ -108,14 +108,14 @@ export default function DashboardPage() {
           <EstadisticaCard
             titulo="Stock bajo"
             valor={stockBajoCount}
-            icono={<WarningAmberIcon />}
+            icono={<WarningIcon />}
             color={stockBajoCount > 0 ? '#ef4444' : '#16a34a'}
             subtexto={stockBajoCount > 0 ? 'Reponer urgente' : 'Todo OK'}
           />
           <EstadisticaCard
             titulo="Empleados"
             valor={users.length}
-            icono={<PeopleIcon />}
+            icono={<GroupIcon />}
             color="#8b5cf6"
           />
         </Box>

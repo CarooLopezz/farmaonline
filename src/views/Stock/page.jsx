@@ -6,7 +6,7 @@ import {
   IconButton, Tooltip
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import FilterListIcon from '@mui/icons-material/FilterList';
 import EditIcon from '@mui/icons-material/Edit';
@@ -64,7 +64,7 @@ export default function StockPage() {
         {productosStockBajo.length > 0 ? (
           <Alert
             severity="warning"
-            icon={<WarningAmberIcon />}
+            icon={<ErrorOutlineIcon />}
             sx={{ mb: 3, borderRadius: 4, border: '1px solid #fbd38d' }}
           >
             <AlertTitle sx={{ fontWeight: 800 }}>
@@ -263,7 +263,7 @@ export default function StockPage() {
                           fontWeight: 600,
                           color: proximoAVencer ? '#c53030' : 'text.secondary'
                         }}>
-                          {proximoAVencer && <WarningAmberIcon sx={{ fontSize: 14 }} />}
+                          {proximoAVencer && <ErrorOutlineIcon sx={{ fontSize: 14 }} />}
                           {new Date(producto.vencimiento).toLocaleDateString('es-AR')}
                         </Typography>
                       </TableCell>

@@ -9,8 +9,8 @@
 import {
   Card, CardContent, Typography, Chip, Box, Button, LinearProgress,
 } from '@mui/material';
-import WarningAmberIcon from '@mui/icons-material/WarningAmber';
-import LocalPharmacyIcon from '@mui/icons-material/LocalPharmacy';
+import ErrorIcon from '@mui/icons-material/Error';
+import MedicationIcon from '@mui/icons-material/Medication';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function ProductoCard({ producto, onVender, mostrarAcciones }) {
@@ -35,7 +35,7 @@ export default function ProductoCard({ producto, onVender, mostrarAcciones }) {
         {/* Header con nombre y categoría */}
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', mb: 1.5 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-            <LocalPharmacyIcon sx={{ color: '#16a34a', fontSize: 20 }} />
+            <MedicationIcon sx={{ color: '#16a34a', fontSize: 20 }} />
             <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#111827', lineHeight: 1.3 }}>
               {producto.nombre}
             </Typography>
@@ -103,7 +103,7 @@ export default function ProductoCard({ producto, onVender, mostrarAcciones }) {
               mb: 1,
             }}
           >
-            <WarningAmberIcon sx={{ fontSize: 16, color: sinStock ? '#ef4444' : '#f59e0b' }} />
+            <ErrorIcon sx={{ fontSize: 16, color: sinStock ? '#ef4444' : '#f59e0b' }} />
             <Typography variant="caption" sx={{ fontWeight: 600, color: sinStock ? '#ef4444' : '#b45309' }}>
               {sinStock ? '¡Sin stock!' : `Stock bajo (mín. ${producto.stockMinimo})`}
             </Typography>

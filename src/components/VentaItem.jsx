@@ -9,8 +9,8 @@
  *   {ventas.map(v => <VentaItem key={v.id} venta={v} esReciente={...} />)}
  */
 import { ListItem, ListItemIcon, ListItemText, Chip, Typography, Box } from '@mui/material';
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import FiberNewIcon from '@mui/icons-material/FiberNew';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+import NewReleasesIcon from '@mui/icons-material/NewReleases';
 
 export default function VentaItem({ venta, esReciente }) {
   const total = venta.cantidad * venta.precioUnit;
@@ -30,9 +30,9 @@ export default function VentaItem({ venta, esReciente }) {
       <ListItemIcon sx={{ minWidth: 40 }}>
         {/* RENDERIZADO CONDICIONAL: icono diferente si es reciente */}
         {esReciente ? (
-          <FiberNewIcon sx={{ color: '#16a34a' }} />
+          <NewReleasesIcon sx={{ color: '#16a34a' }} />
         ) : (
-          <ReceiptLongIcon sx={{ color: '#9ca3af' }} />
+          <ReceiptIcon sx={{ color: '#9ca3af' }} />
         )}
       </ListItemIcon>
       <ListItemText
